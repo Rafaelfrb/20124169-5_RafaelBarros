@@ -15,7 +15,7 @@
         }
         header {
             height: 187px;
-            background-color: #DD6A00;
+            background-color: #cf2b4e;
             text-align: center;
             padding: 10px;
             
@@ -48,9 +48,16 @@
         
         }
         footer {
-            background-color: #FFAD93;
+            background-color: #cf2b4e;
             min-height: 60px;
             padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            padding-top: 30px;
         }
     </style>
 </head>
@@ -64,7 +71,14 @@
             <li>Endereço</li>
         </ul>
     </nav>
-    <div class="content">conteúdo</div>
+    <div class="content">
+        <div class="container">
+            <?php
+            include('pages/home.php');
+            ?>
+        </div>
+        
+        </div>
     <footer>Rafael do N. F. Barros RA: 20124169-5</footer> 
 </body>
 </html>
