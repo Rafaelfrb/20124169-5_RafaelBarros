@@ -9,9 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+
         body {
             margin: 0;
             font-family: 'Bitter', serif;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
         }
         header {
             height: 187px;
@@ -58,6 +64,7 @@
             justify-content: space-between;
             margin: auto;
             padding-top: 30px;
+            
         }
     </style>
 </head>
@@ -74,7 +81,14 @@
     <div class="content">
         <div class="container">
             <?php
-            include('pages/home.php');
+            $page = "home";
+            if(isset($_GET['page'])){
+
+                if(file_exists("pages/".$_GET['page'].".php")){
+                    $page = $_GET['page'];
+                }
+            }
+            include("pages/$page.php");
             ?>
         </div>
         

@@ -1,3 +1,8 @@
+<?php
+    require_once('dados/produtos.php');
+?>
+
+
 <style>
     .card-produto{
         width: 200px; 
@@ -7,19 +12,18 @@
     .card-produto img{
         width: 200px;
         height: 200px;
-        border radius: 100px;
+        border-radius: 100px;
     }
 </style>
-
+<?php
+    foreach($produtos as $id => $produto):
+?>
+<a href="index.php?page=produto&id=<?php echo $id?>">
 <div class="card-produto">
-    <img src="images/Brownie.jpg" alt="Brownie">
-    <h3>Brownie</h3>
+    <img src="images/<?php echo $produto['imagem']?>" alt="<?php echo $produto['nome']?>">
+    <h3><?php echo $produto['nome']?></h3>
 </div>
-<div class="card-produto">
-    <img src="images/Brigadeiro.jpg" alt="Brigadeiro">
-    <h3>Brigadeiro</h3>
-</div>
-<div class="card-produto">
-    <img src="images/Pudim.jpg" alt="Pudim">
-    <h3>Pudim</h3>
-</div>
+</a>
+<?php
+    endforeach
+?>
